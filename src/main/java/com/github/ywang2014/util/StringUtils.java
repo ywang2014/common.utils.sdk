@@ -44,7 +44,7 @@ public class StringUtils {
      * @return true or false
      */
     public static boolean validEmail(String email) {
-        String pattern = "/^([A-Za-z0-9_\\-\\.])+\\@([A-Za-z0-9_\\-\\.])+\\.([A-Za-z]{2,4})$/";
+        String pattern = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+(com|net|cn)$";
         boolean checkFormat = regexMatch(email, pattern);
         List<String> domainWhiteList = Arrays.asList("qq.com", "163.com", "vip.163.com", "263.net", "yeah.net", "126.com", "sohu.com", "sina.cn", "sina.com", "eyou.com", "gmail.com", "hotmail.com", "42du.cn");
         if (checkFormat) {
@@ -62,6 +62,6 @@ public class StringUtils {
      * @return true or false
      */
     public static boolean validDigit(String number) {
-        return regexMatch(number, "^([1-9][0-9]*)$");
+        return regexMatch(number, "^(0|[1-9][0-9]*)$");
     }
 }
